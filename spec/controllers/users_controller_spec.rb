@@ -123,7 +123,7 @@ end
     
     it "should have a link to the change the Gravatar" do
       get :edit, :id => @user
-      gravatar_url = "http://gravatar.come/emails"
+      gravatar_url = 'http://gravatar.come/emails'
       response.should have_selector("a", :href => gravatar_url, :content => "change")
     end
   end
@@ -153,8 +153,9 @@ end
     end
     
     describe "success" do
+      
       before(:each) do
-        @attr = {:email => "user@example.org", :name => "New Name", :password => "barbaz", :password_confirmation => "barbaz"}
+        @attr = {:name => "New Name", :email => "user@example.org", :password => "barbaz", :password_confirmation => "barbaz"}
       end
       
       it "should change the user's attributes" do
